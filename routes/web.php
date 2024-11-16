@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProfileDesaController;
 
 Route::get('/index', [HomeController::class, 'index'])->name('index');
+Route::get('/wilayahdesa', [ProfileDesaController::class, 'wilayahdesa'])->name('wilayahdesa');
 Route::get('/visidanmisidesa', [ProfileDesaController::class, 'visidanmisidesa'])->name('profiledesa.visidanmisidesa');
 Route::get('/sejarahdesa', [ProfileDesaController::class, 'sejarahdesa'])->name('profiledesa.sejarahdesa');
 Route::get('/berita/{id}', [BeritaController::class, 'show'])->name('berita.show');
@@ -27,9 +28,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/kelolaberita', [BeritaController::class, 'kelolaberita'])->name('admin.kelolaberita');
     Route::post('/addberita', [BeritaController::class, 'addberita'])->name('addberita');
     Route::get('delete/{id}', [BeritaController::class, 'delete'])->name('delete');
+    Route::post('update/{id}', [BeritaController::class, 'update'])->name('update');
     
     // Calendar
-    Route::get('/calendar', [AdminController::class, 'calendar'])->name('admin.calendar');
+    Route::get('/statistik', [AdminController::class, 'statistik'])->name('admin.statistikpenduduk');
+    Route::get('/struktur', [AdminController::class, 'struktur'])->name('admin.strukturperangkatdesa');
 
 });
 

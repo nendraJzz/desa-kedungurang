@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function calendar () {
-        return view('admin.calendar');
+    public function statistik () {
+        return view('admin.statistikpenduduk');
+    }
+
+    public function struktur () {
+        return view('admin.strukturperangkatdesa');
     }
 }

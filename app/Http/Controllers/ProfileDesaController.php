@@ -12,4 +12,7 @@ class ProfileDesaController extends Controller
     public function sejarahdesa () {
         return view('profiledesa.sejarahdesa');
     }
+    public function wilayahdesa () {
+        return view('profiledesa.wilayahdesa');
+    }
 }

@@ -50,5 +50,11 @@ class BeritaController extends Controller
         return redirect()->route('admin.kelolaberita')->with('success', 'Berita berhasil dihapus!');
     }
     
+    public function update(Request $request, $id)
+    {
+        $data = Berita::findOrFail($id);
+        $data->update($request->all());
+        return redirect()->route('admin.kelolaberita');
+    }
 
 }

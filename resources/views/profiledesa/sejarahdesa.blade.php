@@ -1,13 +1,19 @@
 <x-navbar-layout>
-    <div class="relative z-10 flex items-center justify-center min-h-screen">
-      <div class="text-center text-white px-4">
-        <h1 class="text-4xl md:text-5xl font-bold">Sejarah Desa Kedungurang <br> Kecamatan Gumelar</h1>
-        <p class="text-lg md:text-2xl font-semibold mt-4">Pemerintah Kabupaten Banyumas</p>
-      </div>
+  <div class="relative z-10 flex items-center justify-center min-h-screen" style="background-image: url(/img/kd.jpg)">
+    <div class="absolute inset-0 bg-black opacity-70"></div>
+    
+    <div class="relative text-center text-white px-4">
+        <h1 class="text-4xl md:text-5xl font-bold">
+            Sejarah Desa Kedungurang <br> Kecamatan Gumelar
+        </h1>
+        <p class="text-lg md:text-2xl font-semibold mt-4">
+            Pemerintah Kabupaten Banyumas
+        </p>
     </div>
-  </div>
+</div>
+
   
-  <div class="relative z-10 bg-white shadow-2xl">
+  <div class="relative z-10 bg-white">
     <div class="container mx-auto p-4 md:p-8">
 
       <h1 class="flex justify-center pt-10 text-3xl md:text-4xl font-bold text-center">
