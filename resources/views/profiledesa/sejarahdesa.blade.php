@@ -16,7 +16,7 @@
   <div class="relative z-10 bg-white">
     <div class="container mx-auto p-4 md:p-8">
 
-      <h1 class="flex justify-center pt-10 text-3xl md:text-4xl font-bold text-center">
+      <h1 class="flex justify-center text-black pt-10 text-3xl md:text-4xl font-bold text-center">
         Sejarah Desa Kedungurang
       </h1>
   

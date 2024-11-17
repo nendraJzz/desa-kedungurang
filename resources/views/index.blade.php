@@ -16,8 +16,8 @@
     <div class="relative z-10 bg-white">
       <div class="container mx-auto p-4 md:p-8">
 
-        <h1 class="font-bold text-4xl pb-2 pt-5 text-black">Berita Desa</h1>
-        <p class="text-lg text-black pb-4">Menyajikan informasi terbaru tentang peristiwa, berita terkini dari Desa Kedungurang</p>
+        <h1 class="font-bold text-3xl md:text-4xl pb-2 pt-5 text-black">Berita Desa</h1>
+        <p class="text-lg text-gray-500 pb-4">Menyajikan informasi terbaru tentang peristiwa, berita terkini dari Desa Kedungurang</p>
         <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           
 
@@ -64,36 +64,44 @@
         </div>
     </div>
     <div class="mt-10 pb-1">
-        <div class="relative">
-            <div class="absolute inset-0 h-1/2 bg-gray-50"></div>
-            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="max-w-4xl mx-auto">
-                    <dl class="rounded-lg bg-white shadow-lg sm:grid sm:grid-cols-3">
-                        <div class="flex flex-col border-b border-gray-100 p-6 text-center sm:border-0 sm:border-r">
-                            <dt class="order-2 mt-2 text-lg leading-6 font-medium text-black">
+      <div class="relative">
+          <div class="absolute inset-0 h-1/2 bg-gray-50"></div>
+          <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="max-w-4xl mx-auto">
+                  <dl class="rounded-lg bg-white shadow-lg sm:grid sm:grid-cols-3">
+                      <!-- Jumlah Kepala Keluarga -->
+                      <div class="flex flex-col border-b border-gray-100 p-6 text-center sm:border-0 sm:border-r">
+                          <dt class="order-2 mt-2 text-lg leading-6 font-medium text-black">
                               Jumlah Kepala Keluarga (KK)
-                            </dt>
-                            <dd class="order-1 text-5xl font-bold text-black">2.236 KK</dd>
-                        </div>
-                        <div
-                            class="flex flex-col border-t border-b border-gray-100 p-6 text-center sm:border-0 sm:border-l sm:border-r">
-                            <dt class="order-2 mt-2 text-lg leading-6 font-medium text-black">
-                                Pria
-                            </dt>
-                            <dd class="order-1 text-5xl font-bold text-black">3.494 Jiwa</dd>
-                        </div>
-                        <div class="flex flex-col border-t border-gray-100 p-6 text-center sm:border-0 sm:border-l">
-                            <dt class="order-2 mt-2 text-lg leading-6 font-medium text-black">
-                                Wanita
-                            </dt>
-                            <dd class="order-1 text-5xl font-bold text-black">3.344 Jiwa</dd>
-                        </div>
-                    </dl>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                          </dt>
+                          <dd class="order-1 text-4xl font-bold text-black">
+                              {{ $jumlah_kepala_keluarga ?? 0 }} KK
+                          </dd>
+                      </div>
+                      <!-- Jumlah Pria -->
+                      <div class="flex flex-col border-t border-b border-gray-100 p-6 text-center sm:border-0 sm:border-l sm:border-r">
+                          <dt class="order-2 mt-2 text-lg leading-6 font-medium text-black">
+                              Pria
+                          </dt>
+                          <dd class="order-1 text-4xl font-bold text-black">
+                              {{ $jumlah_pria ?? 0 }} Jiwa
+                          </dd>
+                      </div>
+                      <!-- Jumlah Wanita -->
+                      <div class="flex flex-col border-t border-gray-100 p-6 text-center sm:border-0 sm:border-l">
+                          <dt class="order-2 mt-2 text-lg leading-6 font-medium text-black">
+                              Wanita
+                          </dt>
+                          <dd class="order-1 text-4xl font-bold text-black">
+                              {{ $jumlah_wanita ?? 0 }} Jiwa
+                          </dd>
+                      </div>
+                  </dl>
+              </div>
+          </div>
+      </div>
+  </div>
+  
 
 <div class="flex flex-col items-center pb-16 md:pt-12 justify-center min-h-screen px-4">
   <h2 class="text-3xl font-bold text-black md:text-4xl text-center mb-5">

@@ -1,72 +1,101 @@
 <x-app-layout>
-    <div class="flex flex-col items-center justify-center min-h-screen pt-20">
-        <h1 class="text-4xl font-bold mb-6 text-center">Statistik Data Penduduk</h1>
-        
-        <!-- Grafik dengan ukuran lebih besar -->
-        <div class="w-80 h-80 mb-4"> <!-- Grafik 320x320 piksel -->
-            <canvas id="populationChart"></canvas>
-        </div>
+  <div class="flex flex-col items-center justify-center min-h-screen pt-20">
+      <h1 class="text-4xl font-bold mb-6 pt-5 text-center">Statistik Data Penduduk</h1>
 
-        <!-- Informasi Penduduk -->
-        <div class="text-center">
-            <p class="text-lg font-medium">Total Penduduk: <span class="font-bold">6000</span></p>
-            <p class="text-lg font-medium">Pria: <span class="font-bold">3000</span></p>
-            <p class="text-lg font-medium">Wanita: <span class="font-bold">3000</span></p>
-        </div>
-    </div>
-    <script>
-      // Data penduduk
-      const totalPenduduk = 6000;
-      const pria = 3000;
-      const wanita = 3000;
+      <div class="flex flex-col md:flex-row items-stretch justify-center gap-10 px-4 py-5">
+          <div class="flex flex-col items-center bg-gray-100 p-6 rounded-lg shadow-lg w-full max-w-md">
+              <div class="w-80 h-80 mb-6">
+                  <canvas id="populationChart"></canvas>
+              </div>
+          </div>
 
-      const dataKependudukan = {
-        SD: 1500,
-        SMP: 1200,
-        SMA: 1000,
-        SMK: 800,
-        Bekerja: 1500,
-      };
+          <div class="bg-white p-6 rounded-md shadow-lg w-full max-w-md flex flex-col">
+              <h1 class="font-bold mb-6 text-2xl text-center">Tambahkan Statistik Penduduk</h1>
+              <form method="POST" action="{{ route('penduduk.store') }}" class="flex-grow">
+                  @csrf
+                  <div class="mb-5">
+                      <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
+                          Jumlah KK
+                      </label>
+                      <input type="text" id="jumlah_kepala_keluarga" name="jumlah_kepala_keluarga" placeholder="Masukkan Jumlah KK"
+                          class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-indigo-600 focus:shadow-md" />
+                  </div>
+                  <div class="mb-5">
+                      <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
+                          Jumlah Pria
+                      </label>
+                      <input type="number" id="jumlah_pria" name="jumlah_pria"  placeholder="Masukkan Jumlah Pria"
+                          class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-indigo-600 focus:shadow-md" />
+                  </div>
+                  <div class="mb-5">
+                      <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
+                          Jumlah Wanita
+                      </label>
+                      <input type="number" id="jumlah_wanita" name="jumlah_wanita" placeholder="Masukkan Jumlah Wanita"
+                          class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-indigo-600 focus:shadow-md" />
+                  </div>
+                  <div>
+                      <button
+                          class="hover:shadow-form w-full rounded-md bg-indigo-600 hover:bg-indigo-700 py-3 px-8 text-center text-base font-semibold text-white outline-none">
+                          Tambah Penduduk
+                      </button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
 
-      // Warna untuk setiap kategori
-      const colors = [
-        '#FF6384', // SD
-        '#36A2EB', // SMP
-        '#FFCE56', // SMA
-        '#4BC0C0', // SMK
-        '#9966FF'  // Bekerja
-      ];
+  <script>
+    // Data penduduk
+    const totalPenduduk = 6000;
+    const pria = 3000;
+    const wanita = 3000;
 
-      // Grafik
-      const ctx = document.getElementById('populationChart').getContext('2d');
-      new Chart(ctx, {
-        type: 'pie', // Tipe grafik
-        data: {
-          labels: Object.keys(dataKependudukan),
-          datasets: [{
-            data: Object.values(dataKependudukan),
-            backgroundColor: colors,
-          }],
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false, // Membebaskan proporsi grafik
-          plugins: {
-            legend: {
-              position: 'top',
-            },
-            tooltip: {
-              callbacks: {
-                label: function(tooltipItem) {
-                  const label = tooltipItem.label;
-                  const value = tooltipItem.raw;
-                  const percentage = ((value / totalPenduduk) * 100).toFixed(2);
-                  return `${label}: ${value} (${percentage}%)`;
-                }
+    const dataKependudukan = {
+      SD: 1500,
+      SMP: 1200,
+      SMA: 1000,
+      SMK: 800,
+      Bekerja: 1500,
+    };
+
+    const colors = [
+      '#FF6384',
+      '#36A2EB',
+      '#FFCE56', 
+      '#4BC0C0', 
+      '#9966FF'  
+    ];
+
+    const ctx = document.getElementById('populationChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: Object.keys(dataKependudukan),
+        datasets: [{
+          data: Object.values(dataKependudukan),
+          backgroundColor: colors,
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false, 
+        plugins: {
+          legend: {
+            position: 'top',
+          },
+          tooltip: {
+            callbacks: {
+              label: function(tooltipItem) {
+                const label = tooltipItem.label;
+                const value = tooltipItem.raw;
+                const percentage = ((value / totalPenduduk) * 100).toFixed(2);
+                return `${label}: ${value} (${percentage}%)`;
               }
             }
           }
         }
-      });
-    </script>
+      }
+    });
+  </script>
 </x-app-layout>

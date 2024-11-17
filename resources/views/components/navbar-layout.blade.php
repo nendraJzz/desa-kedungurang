@@ -22,43 +22,9 @@
               </label>
               <!-- Mobile Menu -->
               <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 w-52 p-2 shadow bg-base-100 rounded-box z-[1]">
-                <li>
-                  <details>
-                    <summary>Profile Desa</summary>
-                    <ul class="p-2 bg-base-100 rounded-box">
                       <li><a href="/visidanmisidesa" class="text-black">Visi & Misi</a></li>
                       <li><a href="/sejarahdesa" class="text-black">Sejarah Desa</a></li>
                       <li><a href="/wilayahdesa" class="text-black">Wilayah Desa</a></li>
-                    </ul>
-                  </details>
-                </li>
-                <li>
-                  <details>
-                    <summary>Lembaga Desa</summary>
-                    <ul class="p-2 bg-base-100 rounded-box">
-                      <li><a href="/pemerintahdesa" class="text-black">Pemerintah Desa</a></li>
-                      <li><a href="/bpd" class="text-black">Badan Permusyawaratan Desa</a></li>
-                    </ul>
-                  </details>
-                </li>
-                <li>
-                  <details>
-                    <summary>Potensi Desa</summary>
-                    <ul class="p-2 bg-base-100 rounded-box">
-                      <li><a href="/komoditi" class="text-black">Komoditi Unggulan</a></li>
-                      <li><a href="/produk" class="text-black">Produk Desa</a></li>
-                    </ul>
-                  </details>
-                </li>
-                <li>
-                  <details>
-                    <summary>Menu Publik</summary>
-                    <ul class="p-2 bg-base-100 rounded-box">
-                      <li><a href="/berita" class="text-black">Berita</a></li>
-                      <li><a href="/informasi" class="text-black">Informasi</a></li>
-                    </ul>
-                  </details>
-                </li>
               </ul>
             </div>
             <div class="flex items-center">
@@ -71,42 +37,11 @@
           <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal text-white text-md px-1">
               <li>
-                <details>
-                  <summary>Profile Desa</summary>
-                  <ul class="p-2 bg-base-100 rounded-box">
-                    <li><a href="/visidanmisidesa" class="text-black">Visi & Misi</a></li>
-                    <li><a href="/sejarahdesa" class="text-black">Sejarah Desa</a></li>
-                    <li><a href="/wilayahdesa" class="text-black">Wilayah Desa</a></li>
-                  </ul>
-                </details>
+                    <li><a href="/visidanmisidesa" class="text-white">Visi & Misi</a></li>
+                    <li><a href="/sejarahdesa" class="text-white">Sejarah Desa</a></li>
+                    <li><a href="/wilayahdesa" class="text-white">Wilayah Desa</a></li>
               </li>
-              <li>
-                <details>
-                  <summary>Lembaga Desa</summary>
-                  <ul class="p-2 bg-base-100 rounded-box">
-                    <li><a href="/pemerintahdesa" class="text-black">Pemerintah Desa</a></li>
-                    <li><a href="/bpd" class="text-black">Badan Permusyawaratan Desa</a></li>
-                  </ul>
-                </details>
-              </li>
-              <li>
-                <details>
-                  <summary>Potensi Desa</summary>
-                  <ul class="p-2 bg-base-100 rounded-box">
-                    <li><a href="/komoditi" class="text-black">Komoditi Unggulan</a></li>
-                    <li><a href="/produk" class="text-black">Produk Desa</a></li>
-                  </ul>
-                </details>
-              </li>
-              <li>
-                <details>
-                  <summary>Menu Publik</summary>
-                  <ul class="p-2 bg-base-100 rounded-box">
-                    <li><a href="/berita" class="text-black">Berita</a></li>
-                    <li><a href="/informasi" class="text-black">Informasi</a></li>
-                  </ul>
-                </details>
-              </li>
+
             </ul>
           </div>
 

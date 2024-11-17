@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\BeritaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\ProfileDesaController;
 
 Route::get('/index', [HomeController::class, 'index'])->name('index');
@@ -29,6 +30,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/addberita', [BeritaController::class, 'addberita'])->name('addberita');
     Route::get('delete/{id}', [BeritaController::class, 'delete'])->name('delete');
     Route::post('update/{id}', [BeritaController::class, 'update'])->name('update');
+
+    // Penduduk
+    Route::post('penduduk', [PendudukController::class, 'store'])->name('penduduk.store');
     
     // Calendar
     Route::get('/statistik', [AdminController::class, 'statistik'])->name('admin.statistikpenduduk');
