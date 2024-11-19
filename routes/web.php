@@ -33,6 +33,8 @@ Route::middleware('auth')->group(function () {
 
     // Penduduk
     Route::post('penduduk', [PendudukController::class, 'store'])->name('penduduk.store');
+    Route::get('/admin/berita/{id}/edit', [BeritaController::class, 'edit'])->name('admin.editberita');
+    Route::put('/admin/berita/{id}', [BeritaController::class, 'updateberita'])->name('admin.updateberita');
     
     // Calendar
     Route::get('/statistik', [AdminController::class, 'statistik'])->name('admin.statistikpenduduk');

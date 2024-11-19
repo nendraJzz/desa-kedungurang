@@ -87,7 +87,7 @@
                             <td>{{ $post->keterangan }}</td>
                             <td>
                                 <div class="flex flex-col sm:flex-row sm:space-x-2 space-y-2 sm:space-y-0">
-                                    <a class="btn bg-yellow-500 hover:bg-yellow-600 text-white btn-xs w-full sm:w-auto">Edit</a>
+                                    <a href="{{ route('admin.editberita', $post->id) }}"  class="btn bg-yellow-500 hover:bg-yellow-600 text-white btn-xs w-full sm:w-auto">Edit</a>
                                     <a  href="delete/{{ $post->id }}" class="btn bg-red-500 hover:bg-red-600 text-white btn-xs w-full sm:w-auto">Delete</a>
                                 </div>
                             </td>
@@ -98,8 +98,6 @@
             </div>
         </div>
     </div>
-    
-    
 
     <script>
         window.addEventListener('DOMContentLoaded', (event) => {

@@ -47,9 +47,9 @@
 
   <script>
     // Data penduduk
-    const totalPenduduk = 6000;
-    const pria = 3000;
-    const wanita = 3000;
+    const totalPenduduk = 6.838; 
+    const pria = 3494;
+    const wanita = 3344;
 
     const dataKependudukan = {
       SD: 1500,
@@ -57,29 +57,31 @@
       SMA: 1000,
       SMK: 800,
       Bekerja: 1500,
+      Lansia: 500,  
     };
 
     const colors = [
-      '#FF6384',
-      '#36A2EB',
+      '#FF6384',  
+      '#36A2EB',  
       '#FFCE56', 
-      '#4BC0C0', 
-      '#9966FF'  
+      '#4BC0C0',  
+      '#9966FF',  
+      '#FF5733',  
     ];
 
     const ctx = document.getElementById('populationChart').getContext('2d');
     new Chart(ctx, {
       type: 'pie',
       data: {
-        labels: Object.keys(dataKependudukan),
+        labels: Object.keys(dataKependudukan),  
         datasets: [{
-          data: Object.values(dataKependudukan),
-          backgroundColor: colors,
+          data: Object.values(dataKependudukan),  
+          backgroundColor: colors, 
         }],
       },
       options: {
         responsive: true,
-        maintainAspectRatio: false, 
+        maintainAspectRatio: false,
         plugins: {
           legend: {
             position: 'top',
@@ -97,5 +99,6 @@
         }
       }
     });
-  </script>
+</script>
+
 </x-app-layout>

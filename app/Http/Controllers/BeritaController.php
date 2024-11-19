@@ -17,6 +17,14 @@ class BeritaController extends Controller
         return view('admin.kelolaberita', compact('posts'));
     }
 
+    public function edit($id)
+    {
+    $berita = Berita::findOrFail($id);
+
+    return view('admin.editberita', compact('berita'));
+    }
+
+
     public function addberita(Request $request) {
         $request->validate([
             'nama' => ['required'],
@@ -33,7 +41,6 @@ class BeritaController extends Controller
             'image' => $imagePath
         ]);
     
-        // Tambahkan flash message
         return redirect()->route('admin.kelolaberita')->with('success', 'Berita berhasil ditambahkan!');
     }
     
@@ -50,11 +57,37 @@ class BeritaController extends Controller
         return redirect()->route('admin.kelolaberita')->with('success', 'Berita berhasil dihapus!');
     }
     
-    public function update(Request $request, $id)
+    public function updateberita(Request $request, $id)
     {
-        $data = Berita::findOrFail($id);
-        $data->update($request->all());
-        return redirect()->route('admin.kelolaberita');
+        $request->validate([
+            'nama' => ['required'],
+            'keterangan' => ['required'],
+            'image' => ['nullable', 'image'], // Gambar tidak wajib diunggah
+        ]);
+    
+        $berita = Berita::findOrFail($id);
+    
+        // Update data
+        $berita->nama = $request->nama;
+        $berita->keterangan = $request->keterangan;
+    
+        // Cek jika ada gambar baru
+        if ($request->hasFile('image')) {
+            // Hapus gambar lama
+            if ($berita->image && file_exists(public_path($berita->image))) {
+                unlink(public_path($berita->image));
+            }
+    
+            // Simpan gambar baru
+            $imagePath = $this->storeImage($request->file('image'));
+            $berita->image = $imagePath;
+        }
+    
+        // Simpan perubahan
+        $berita->save();
+    
+        return redirect()->route('admin.kelolaberita')->with('success', 'Berita berhasil diperbarui!');
     }
+    
 
 }

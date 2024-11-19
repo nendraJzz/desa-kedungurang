@@ -72,26 +72,28 @@
 
 
     
-
-        <script>
-            function updateDateTime() {
-                const date = new Date();
-                const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
-                const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
-                
-                const dayName = days[date.getDay()];
-                const monthName = months[date.getMonth()];
-                const day = date.getDate();
-                const year = date.getFullYear();
-                const hours = String(date.getHours()).padStart(2, '0');
-                const minutes = String(date.getMinutes()).padStart(2, '0');
-                const seconds = String(date.getSeconds()).padStart(2, '0');
+    <script>
+        function updateDateTime() {
+            const date = new Date();
+            const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+            const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+            
+            const dayName = days[date.getDay()];
+            const monthName = months[date.getMonth()];
+            const day = date.getDate();
+            const year = date.getFullYear();
+            const hours = String(date.getHours()).padStart(2, '0');
+            const minutes = String(date.getMinutes()).padStart(2, '0');
+            const seconds = String(date.getSeconds()).padStart(2, '0');
     
-                document.getElementById("time").innerText = `${hours}:${minutes}:${seconds}`;
-                document.getElementById("date").innerText = `${dayName}, ${day} ${monthName} ${year}`;
-            }
+            document.getElementById("time").innerText = `${hours}:${minutes}:${seconds}`;
+            document.getElementById("date").innerText = `${dayName}, ${day} ${monthName} ${year}`;
+        }
     
-            setInterval(updateDateTime, 1000);
-        </script>
+        updateDateTime();
+        
+        setInterval(updateDateTime, 1000);
+    </script>
+    
     
 </x-app-layout>
