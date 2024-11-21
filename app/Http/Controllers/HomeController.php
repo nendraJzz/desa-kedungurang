@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index() {
-        $posts = Berita::all();
+        $posts = Berita::latest()->take(3)->get();;
 
         // Statistik penduduk
         $jumlah_kepala_keluarga = Penduduk::sum('jumlah_kepala_keluarga'); // Total kepala keluarga

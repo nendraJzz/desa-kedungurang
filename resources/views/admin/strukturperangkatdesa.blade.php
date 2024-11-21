@@ -1,4 +1,6 @@
-<x-app-layout>
+@extends('layouts.app')
+
+@section('content')
     <div class="flex flex-col pt-24 items-center">
         <h1 class="text-3xl md:text-5xl font-bold pb-10">Struktur Perangkat Desa</h1>
     
@@ -51,5 +53,4 @@
             <div class="h-8 w-1 bg-black"></div>
         </div>
     </div>
-
-</x-app-layout>
+    @endsection

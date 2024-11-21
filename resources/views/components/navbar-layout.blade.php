@@ -12,45 +12,50 @@
     <!-- Navbar -->
     <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent">
       <div class="container mx-auto">
-        <div class="navbar">
-          <div class="navbar-start">
-            <div class="dropdown">
-              <label tabindex="0" class="btn btn-ghost lg:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="white">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
-                </svg>
-              </label>
-              <!-- Mobile Menu -->
-              <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 w-52 p-2 shadow bg-base-100 rounded-box z-[1]">
-                      <li><a href="/visidanmisidesa" class="text-black">Visi & Misi</a></li>
-                      <li><a href="/sejarahdesa" class="text-black">Sejarah Desa</a></li>
-                      <li><a href="/wilayahdesa" class="text-black">Wilayah Desa</a></li>
-              </ul>
-            </div>
-            <div class="flex items-center">
-              <img src="/img/logo-banyumas.png" alt="Logo Desa Kedungurang" class="h-10 mr-2">
-              <span class="text-white text-lg lg:text-xl font-semibold">Desa Kedungurang</span>
-            </div>
+          <div class="navbar">
+              <!-- Navbar Start -->
+              <div class="navbar-start flex items-center">
+                  <div class="dropdown">
+                      <label tabindex="0" class="btn btn-ghost lg:hidden">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="white">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                          </svg>
+                      </label>
+                      <!-- Mobile Menu -->
+                      <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 w-52 p-2 shadow bg-base-100 rounded-box z-[1]">
+                          <li><a href="/visidanmisidesa" class="text-black">Visi & Misi</a></li>
+                          <li><a href="/sejarahdesa" class="text-black">Sejarah Desa</a></li>
+                          <li><a href="/wilayahdesa" class="text-black">Wilayah Desa</a></li>
+                          <li><a href="/beritadesa" class="text-black">Berita Desa</a></li>
+                      </ul>
+                  </div>
+                  <div class="flex items-center space-x-2 lg:space-x-4">
+                      <img src="/img/logo-banyumas.png" alt="Logo Desa Kedungurang" class="h-10">
+                      <div class="flex flex-col">
+                          <span class="text-white text-lg lg:text-xl font-semibold">Desa Kedungurang</span>
+                          <span class="hidden sm:block text-white text-sm font-light">Pemerintah Kabupaten Banyumas</span>
+                      </div>
+                  </div>
+              </div>
+  
+              <!-- Navbar Center -->
+              <div class="navbar-center hidden lg:flex">
+                  <ul class="menu menu-horizontal text-white text-md px-1">
+                      <li><a href="/visidanmisidesa" class="text-white">Visi & Misi</a></li>
+                      <li><a href="/sejarahdesa" class="text-white">Sejarah Desa</a></li>
+                      <li><a href="/wilayahdesa" class="text-white">Wilayah Desa</a></li>
+                      <li><a href="/beritadesa" class="text-white">Berita Desa</a></li>
+                  </ul>
+              </div>
+  
+              <!-- Navbar End -->
+              <div class="navbar-end px-3 sm:px-5">
+                  <button class="btn bg-white text-black">Contact</button>
+              </div>
           </div>
-
-          <!-- Desktop Menu -->
-          <div class="navbar-center hidden lg:flex">
-            <ul class="menu menu-horizontal text-white text-md px-1">
-              <li>
-                    <li><a href="/visidanmisidesa" class="text-white">Visi & Misi</a></li>
-                    <li><a href="/sejarahdesa" class="text-white">Sejarah Desa</a></li>
-                    <li><a href="/wilayahdesa" class="text-white">Wilayah Desa</a></li>
-              </li>
-
-            </ul>
-          </div>
-
-          <div class="navbar-end px-3 sm:px-5">
-            <button class="btn bg-white text-black">Contact</button>
-          </div>
-        </div>
       </div>
-    </nav>
+  </nav>
+  
 
     {{ $slot }}
 
@@ -64,7 +69,7 @@
             </div>
     
             <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 lg:text-left">
-              Desa Kedungurang Kecamatan Gumelar, Pemerintah Kabupaten Banyumas.
+              Website Resmi Desa Kedungurang Kecamatan Gumelar, Pemerintah Kabupaten Banyumas.
             </p>
           </div>
     
@@ -85,7 +90,7 @@
         </div>
     
         <p class="mt-12 text-center text-sm text-gray-500 lg:text-right">
-          Copyright &copy; 2024. All rights reserved.
+          Copyright &copy; 2024. Desa Kedungurang.
         </p>
       </div>
     </footer>

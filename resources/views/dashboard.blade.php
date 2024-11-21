@@ -1,77 +1,26 @@
-<x-app-layout>
-    <div class="py-10 pt-24 px-5">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between mb-4">
-                <div class="flex items-center space-x-4">
-                    <h1 class="text-4xl font-semibold text-black">Dashboard</h1>
+@extends('layouts.app')
+
+@section('content')
+    <div class="py-10 pt-16 px-5">
+        <div class="max-w-7xl mx-auto ">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 space-y-2 sm:space-y-0">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                    <h1 class="text-3xl sm:text-4xl font-semibold text-black">Dashboard</h1>
                     <span id="time" class="text-sm font-mono text-gray-500"></span>
                 </div>
-                <span id="date" class="text-sm font-mono text-gray-500"></span>
+                <span id="date" class="text-sm font-mono text-gray-500 sm:mt-0"></span>
             </div>
 
             <div class="bg-white overflow-hidden shadow-lg rounded-md">
                 <div class="p-6 font-semibold text-gray-800">
-                    {{ __("Selamat Datang,") }} <span class="font-bold text-indigo-700">{{ Auth::user()->name }}!</span> {{ __("Terima kasih Anda telah masuk sebagai Admin. Kelola sistem ini dengan baik.") }}
+                    {{ __("Selamat Datang,") }} 
+                    <span class="font-bold text-indigo-700">{{ Auth::user()->name }}!</span> 
+                    {{ __("Terima kasih Anda telah masuk sebagai Admin. Kelola sistem ini dengan baik.") }}
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="py-2 px-5">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <div class="bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105 relative">
-                    <div class="text-xl font-semibold text-gray-900">
-                        {{ __("Struktur Perangkat Desa") }}
-                    </div>
-                    <div class="text-gray-700 mt-4">
-                        <p>Struktur perangkat desa meliputi nama lengkap serta jabatan.</p>
-                    </div>
-                    <div class="pb-16"></div>
-                    <div class="absolute bottom-6 right-6">
-                        <a href="/struktur" class="inline-block px-6 py-3 bg-indigo-600 text-white rounded-md shadow-md hover:bg-indigo-700 hover:shadow-lg transition duration-300 ease-in-out">
-                            Lihat Detail
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105 relative">
-                    <div class="text-xl font-semibold text-gray-900">
-                        {{ __("Kelola Berita") }}
-                    </div>
-                    <div class="mt-4 text-gray-600">
-                        Kelola berita terbaru Anda dan tambahkan konten yang lebih menarik untuk pengguna.
-                    </div>
-                    <div class="pb-16"></div>
-                    <div class="absolute bottom-6 right-6">
-                        <a href="/kelolaberita" class="inline-block px-6 py-3 bg-indigo-600 text-white rounded-md shadow-md hover:bg-indigo-700 hover:shadow-lg transition duration-300 ease-in-out">
-                            Lihat Detail
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105 relative">
-                    <div class="text-xl font-semibold text-gray-900">
-                        {{ __("Statistik Data Penduduk") }}
-                    </div>
-                    <div class="mt-4 text-gray-600">
-                        Jelajahi data penduduk terkini dan kelola informasi dengan mudah.
-                    </div>
-                    <div class="pb-16"></div>
-                    <div class="absolute bottom-6 right-6">
-                        <a href="/statistik" class="inline-block px-6 py-3 bg-indigo-600 text-white rounded-md shadow-md hover:bg-indigo-700 hover:shadow-lg transition duration-300 ease-in-out">
-                            Lihat Detail
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-    
     <script>
         function updateDateTime() {
             const date = new Date();
@@ -94,6 +43,4 @@
         
         setInterval(updateDateTime, 1000);
     </script>
-    
-    
-</x-app-layout>
+@endsection

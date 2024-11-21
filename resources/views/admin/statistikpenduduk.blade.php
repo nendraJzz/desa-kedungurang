@@ -1,4 +1,6 @@
-<x-app-layout>
+@extends('layouts.app')
+
+@section('content')
   <div class="flex flex-col items-center justify-center min-h-screen pt-20">
       <h1 class="text-4xl font-bold mb-6 pt-5 text-center">Statistik Data Penduduk</h1>
 
@@ -101,4 +103,4 @@
     });
 </script>
 
-</x-app-layout>
+@endsection

@@ -12,6 +12,7 @@ Route::get('/index', [HomeController::class, 'index'])->name('index');
 Route::get('/wilayahdesa', [ProfileDesaController::class, 'wilayahdesa'])->name('wilayahdesa');
 Route::get('/visidanmisidesa', [ProfileDesaController::class, 'visidanmisidesa'])->name('profiledesa.visidanmisidesa');
 Route::get('/sejarahdesa', [ProfileDesaController::class, 'sejarahdesa'])->name('profiledesa.sejarahdesa');
+Route::get('/beritadesa', [ProfileDesaController::class, 'beritadesa'])->name('profiledesa.beritadesa');
 Route::get('/berita/{id}', [BeritaController::class, 'show'])->name('berita.show');
 
 

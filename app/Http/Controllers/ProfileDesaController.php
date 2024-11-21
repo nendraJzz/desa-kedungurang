@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Berita;
 use Illuminate\Http\Request;
 
 class ProfileDesaController extends Controller
@@ -14,5 +15,9 @@ class ProfileDesaController extends Controller
     }
     public function wilayahdesa () {
         return view('profiledesa.wilayahdesa');
+    }
+    public function beritadesa () {
+        $posts = Berita::all();
+        return view('profiledesa.beritadesa', compact('posts'));
     }
 }

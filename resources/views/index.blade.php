@@ -50,6 +50,10 @@
     </div>
     </div>
   </div>
+  
+  <a href="/beritadesa">
+    <p class="flex text-md justify-center text-gray-600 hover:text-gray-800 italic">Baca Semua Berita -></p>
+  </a>
 
   {{--  --}}
   <div class="bg-gray-50 pt-16">
